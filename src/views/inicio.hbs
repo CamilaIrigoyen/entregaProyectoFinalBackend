@@ -1,0 +1,83 @@
+
+<div class="container mt-3">
+    <div id="UserContainer">
+        <div class="d-flex jumbotron py-2 align-items-center justify-content-between" style="background-color:gray;">
+            <div class="d-flex flex-column w-25">
+                <h3 class="align-self-center">
+                    <strong>{{toRender.username}}</strong>
+                </h3>
+               <img 
+                    {{#if toRender.hostBoolean}}
+                    src="{{toRender.protocol}}://{{toRender.host}}:{{toRender.port}}{{toRender.image}}"
+                    {{else}}
+                    src="{{toRender.protocol}}s://{{toRender.host}}{{toRender.image}}"
+                    {{/if}}
+                    alt="avatar de {{toRender.username}}" 
+                    class="w-50 bg-white align-self-center"
+                >
+            </div>
+            <ul class="mr-5">
+                <h3 class="text-decoration-underline">Informacion del Perfil:</h2>
+                <li>Email: {{toRender.email}}</li>
+                <li>Edad: {{toRender.age}}</li>
+                <li>Dirección: {{toRender.address}}</li>
+                <li>Telefono: {{toRender.phone_number}}</li>
+                <li id="IDcontainer" class="d-none">{{toRender._id}}</li>
+                <li id="IDcartUser" class="d-none">{{toRender.cartID}}</li>
+            </ul>
+            <form action="/session/logout" method="post" class="align-self-center">
+                <input type="submit" class="btn btn-warning" id="btnLogOut" value="Desloguear">
+            </form>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 class="mb-5">Productos:</h2>
+        <div class="row d-flex justify-content-center" id="ProdContainer"></div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 class="mb-5">Carrito:</h2>
+        <div class="table-responsive" id="CartContainer">
+            <table class="table table-dark" id="tableCartContainer">
+            </table>
+        </div>
+
+        <div class="d-flex flex-row justify-content-between">
+            <button id="newOrder" class="btn btn-success mt-2">Enviar orden</button>
+            <span id="total" class="align-self-center" style="font-size: 2rem"></span>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+
+        <h2 class="mb-5" id="OrdersTitle"></h2>
+        <div id="ordersContainer"></div>
+
+    </div>
+
+    <div class="jumbotron">
+        <form action="/chat" method="GET" class="text-center">
+            <input
+                type="submit"
+                class="btn btn-success mt-3 w-25"
+                value="Ir al chat general"
+                style="font-size: 2rem;"
+            />
+        </form>
+    </div>
+
+</div>    
+
+<script 
+    type="module" 
+    src="/js/carts_view.js"
+></script>
+<script 
+    type="module" 
+    src="/js/prods_view.js"
+></script>
+<script 
+    type="module" 
+    src="/js/orders_view.js"
+></script>
