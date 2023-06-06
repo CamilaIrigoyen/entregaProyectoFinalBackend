@@ -36,3 +36,4 @@
 {"level":"error","message":"Error al insertar un producto en el carrito: TypeError: Cannot read properties of null (reading 'products')","timestamp":"2023-06-05T19:19:54.862Z"}
 {"level":"error","message":"Error en la creación de nueva orden: TypeError: Cannot read properties of null (reading 'products')","timestamp":"2023-06-05T19:21:43.212Z"}
 {"level":"warn","message":"Se ha recibido una petición GET en la ruta /favicon.ico que no existe","timestamp":"2023-06-05T19:36:00.653Z"}
+{"level":"warn","message":"Se ha recibido una petición GET en la ruta /favicon.ico que no existe","timestamp":"2023-06-06T22:18:43.812Z"}
